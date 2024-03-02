@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>KE8YUG - Links</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" type="text/javascript"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/2.0.0/js/dataTables.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.0/css/dataTables.dataTables.css">
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+    
+            var data = [
+                {
+                "Title": "QRZ",
+                "Link": "<a href=" + 'https://www.qrz.com/' +" target='_blank'>QRZ</a>",
+                "Type": "Logging"
+                },
+                {
+                    "Title": "DX Maps",
+                    "Link": "<a href=" + 'https://www.dxmaps.com/spots/mapg.php?Lan=E' + " target='_blank'>DX Maps</a>",
+                    "Type": "Conditions"
+                },
+                {
+                    "Title": "Tropospheric Ducting Forecast",
+                    "Link": "<a href=" + 'https://www.dxinfocentre.com/tropo.html' + " target='_blank'>Tropo Conditions</a>",
+                    "Type": "Conditions"
+                },
+                {
+                    "Title": "Logbook of the World",
+                    "Link": "<a href=" + 'https://lotw.arrl.org/lotw-help/' + " target='_blank'>Logbook of the World</a>",
+                    "Type": "Logging"
+                },
+                {
+                    "Title": "QSL",
+                    "Link": "<a href=" + 'https://admin.qsl.net/index.php' + " target='_blank'>QSL</a>",
+                    "Type": "Resource"
+                },
+                {
+                    "Title": "N1MM",
+                    "Link": "<a href=" + 'https://n1mmwp.hamdocs.com/' + " target='_blank'>N1MM</a>",
+                    "Type": "Logging"
+                },
+                {
+                    "Title": "AARL - Ohio",
+                    "Link": "<a href=" + 'https://arrl-ohio.org/' + " target='_blank'>AARL - Ohio</a>",
+                    "Type": "Resource"
+                },
+                {
+                    "Title": "Hamstudy",
+                    "Link": "<a href=" + 'https://hamstudy.org/' + " target='_blank'>Hamstudy</a>",
+                    "Type": "Resource"
+                },
+                {
+                    "Title": "RigPix",
+                    "Link": "<a href=" + 'https://rigpix.com/' + " target='_blank'>RigPix</a>",
+                    "Type": "Resource"
+                },
+                {
+                    "Title": "eham",
+                    "Link": "<a href=" + 'https://www.eham.net/' + " target='_blank'>eham</a>",
+                    "Type": "Resource"
+                },
+                {
+                    "Title": "PSK Reporter",
+                    "Link": "<a href=" + 'https://pskreporter.info/pskmap.html' + " target='_blank'>PSK Reporter</a>",
+                    "Type": "Conditions"
+                },
+                {
+                    "Title": "Space Weather",
+                    "Link": "<a href=" + 'https://spaceweather.com/' + " target='_blank'>Space Weather</a>",
+                    "Type": "Resource"
+                },
+                {
+                    "Title": "HF Propagation",
+                    "Link": "<a href=" + 'https://www.hamqsl.com/solar.html' + " target='_blank'>HF Propagation</a>",
+                    "Type": "Conditions"
+                },
+                {
+                    "Title": "NOARS",
+                    "Link": "<a href=" + 'https://www.noars.net/' + " target='_blank'>NOARS</a>",
+                    "Type": "Resource"
+                },
+                {
+                    "Title": "Repeater Book",
+                    "Link": "<a href=" + 'https://www.repeaterbook.com/repeaters/index.php?state_id=none&tab=QUICK#' + " target='_blank'>Repeater Book</a>",
+                    "Type": "Resource"
+                },
+                {
+                    "Title": "ARRL Call Sign Search",
+                    "Link": "<a href=" + 'https://www.arrl.org/fcc/search' + " target='_blank'>ARRL Call Sign Search</a>",
+                    "Type": "Resource"
+                },
+                {
+                    "Title": "MUF Conditions",
+                    "Link": "<a href=" + 'https://prop.kc2g.com/' + " target='_blank'>MUF Conditions</a>",
+                    "Type": "Conditions"
+                },
+                {
+                    "Title": "DX View",
+                    "Link": "<a href=" + 'https://vhf.dxview.org/' + " target='_blank'>DX View</a>",
+                    "Type": "Conditions"
+                },
+                {
+                    "Title": "Band Conditions",
+                    "Link": "<a href=" + 'https://solar.w5mmw.net/' + " target='_blank'>Band Conditions</a>",
+                    "Type": "Conditions"
+                },
+                {
+                    "Title": "Online SDR",
+                    "Link": "<a href=" + 'http://rx.linkfanel.net/' + " target='_blank'>Online SDR</a>",
+                    "Type": "Resource"
+                }
+            ];
+    
+            $('#tbLinks')
+                .DataTable({
+                    "destroy": true, //reinitialize
+                    "pagination": true,
+                    "sorting": true,
+                    "aaData": data,
+                    "columns": [{
+                        data: "Title"
+                    }, {
+                        data: "Link"
+                    }, {
+                        data: "Type"
+                    }],
+                    "order": [[1, 'asc']]
+                });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="main">
+        <div id="header">
+            <div id="logo">
+                <div id="logo_text">
+                    <h1><a href="index.html">KE8<span class="logo_colour">YUG</span></a></h1>
+                    <h2>Link Farm</h2>
+                </div>
+            </div>
+            <div id="menubar">
+                <ul id="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="TheWheel.html">The Wheel</a></li>
+                    <li><a href="Conditions.html">Conditions</a></li>
+                    <li class="selected"><a href="Links.html">Links</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="site_content">
+            <div>
+                <h1>Links</h1>
+                <p>Currently a collection of usefull links related to the radio hobby.</p>
+                
+                <table id="tbLinks" class="display">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Link</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+
+<div id="#example">
+
+</div>
+
+        </div>
+        <div id="footer">
+            <i>Stay Classy</i> | KE8YUG | <script>document.write( new Date().getFullYear() );</script>
+        </div>
+    </div>
+</body>
+
+</html>
