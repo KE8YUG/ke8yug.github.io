@@ -5,6 +5,91 @@
     <title>KE8YUG - Current Band Conditions</title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        /* Style the tab */
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        /* Change background color of buttons on hover */
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        /* Create an active/current tablink class */
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+            animation: fadeEffect 1s;
+            /* Fading effect takes 1 second */
+        }
+
+        /* Go from zero to full opacity */
+        @keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .clock {
+
+            transform: translateX(-50%) translateY(-50%);
+            color: #fc5c00;
+            font-size: 125%;
+            font-family: Orbitron;
+            letter-spacing: 1px;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+            document.getElementById("defaultOpen").click();
+        });
+
+        function updateDateTime() {
+            const now = new Date();
+
+            // const currentDateTime = now.toLocaleString();
+            const currentDateTime = now.toUTCString();
+
+            document.querySelector('#datetime').textContent = currentDateTime;
+        }
+
+        // refresh every second
+        setInterval(updateDateTime, 1000);
+    </script>
 </head>
 
 <body>
@@ -34,31 +119,187 @@
                 src="https://www.hamqsl.com/solarn0nbh.php"></a>
           </div>
       </div> -->
-            <div>
-                <h1></h1>
+
+            <div id="conditionTabs">
                 <h1>Current Conditions</h1>
-                <p>A quick view of current conditions around the band.  I have many plans for this page.  This is just the start!</p>
-                <center>
-                    <a href="https://www.hamqsl.com/solar.html" target="_blank"
-                        title="Click to add Solar-Terrestrial Data to your website!"><img
-                            src="https://www.hamqsl.com/solar101vhfpic.php"></a>
-                </center>
-                <div style="float:left">
+                <p>Click on a tab to start exploring!</p>
+                <p><strong><span id="datetime" class="clock"></span></strong></p>
+
+                <div class="tab">
+                    <button class="tablinks" onclick="openTab(event, 'QuickGlance')" id="defaultOpen">Quick
+                        Glance</button>
+                    <button class="tablinks" onclick="openTab(event, 'Propagation')">Propagation</button>
+                    <button class="tablinks" onclick="openTab(event, 'Weather')">Weather</button>
+                    <button class="tablinks" onclick="openTab(event, 'Space')">Space</button>
+                    <button class="tablinks" onclick="openTab(event, 'Solar')">Solar</button>
+                </div>
+
+                <div id="QuickGlance" class="tabcontent">
+                    <center>
+                        <a href="https://www.hamqsl.com/solar.html" target="_blank"
+                            title="Click to add Solar-Terrestrial Data to your website!"><img
+                                src="https://www.hamqsl.com/solar101vhfpic.php"></a>
+                    </center>
                     <a href="https://www.hamqsl.com/solar.html" target="_blank"
                         title="Click to add Solar-Terrestrial Data to your website!">
                         <img src="https://www.hamqsl.com/solarmuf.php"></a>
+                    <a href="https://www.hamqsl.com/solar.html" target="_blank"
+                        title="Click to add Solar-Terrestrial Data to your website!"><img
+                            src="https://www.hamqsl.com/solarsystem.php" align="right"></a>
                 </div>
 
-                <div style="float:right;">
+                <div id="Propagation" class="tabcontent">
+                    <p>HF Propagation</p>
+                    <a href="https://www.hamqsl.com/solar.html" target="_blank"
+                        title="Click to add Solar-Terrestrial Data to your website!"><img
+                            src="https://www.hamqsl.com/solar101vhf.php"></a>
+                    <p></p>
+                    <hr>
+                    <p>NOAA D-RAP</p>
+                    <a href="https://services.swpc.noaa.gov/images/animations/d-rap/global/d-rap/latest.png" target="_blank"><img
+                            src="https://services.swpc.noaa.gov/images/animations/d-rap/global/d-rap/latest.png" height="350px"
+                            width="675px"></a>
+                    <p></p>
+                    <hr>
+                    <p>MUF</p>
+                    <a href="https://prop.kc2g.com/renders/current/mufd-normal-now.svg" target="_blank"><img
+                            src="https://prop.kc2g.com/renders/current/mufd-normal-now.svg" height="300px"
+                            width="600px"></a>
+                    <p></p>
+                    <hr>
+                    <p>Grey Line</p>
+                    <a href="https://www.timeanddate.com/scripts/sunmap.php?iso=now" target="_blank"><img
+                            src="https://www.timeanddate.com/scripts/sunmap.php?iso=now" height="300px"
+                            width="600px"></a>
+                </div>
+
+                <div id="Weather" class="tabcontent">
+                    <p>Satellite - USA</p>
+                    <a href="https://cdn.star.nesdis.noaa.gov/GOES16/GLM/CONUS/EXTENT3/GOES16-CONUS-EXTENT3-625x375.gif"
+                        target="_blank"><img
+                            src="https://cdn.star.nesdis.noaa.gov/GOES16/GLM/CONUS/EXTENT3/GOES16-CONUS-EXTENT3-625x375.gif"></a>
+                    <p></p>
+                    <hr>
+                    <p>Radar - USA</p>
+                    <a href="https://radar.weather.gov/ridge/standard/CONUS_loop.gif" target="_blank"><img
+                            src="https://radar.weather.gov/ridge/standard/CONUS_loop.gif"></a>
+                    <p></p>
+                    <hr>
+                    <p>Forecast - USA</p>
+                    <a href="https://www.wpc.ncep.noaa.gov//noaa/noaa.gif" target="_blank"><img
+                            src="https://www.wpc.ncep.noaa.gov//noaa/noaa.gif" height="392px" width="600px"></a>
+                    <p></p>
+                    <hr>
+                    <p>Lightning - USA</p>
+                    <a href="https://images.lightningmaps.org/blitzortung/america/index.php?animation=usa"
+                        target="_blank"><img
+                            src="https://images.lightningmaps.org/blitzortung/america/index.php?animation=usa"></a>
+                            <p></p>
+                            <hr>
+                            <p>Seismic Activity</p>
+                            <a href="https://ds.iris.edu/seismon/views/eveday_big//imgs/topMap.eveday_big.gif"
+                                target="_blank"><img
+                                    src="https://ds.iris.edu/seismon/views/eveday_big//imgs/topMap.eveday_big.gif" height="350px"
+                                    width="675px"></a>
+                </div>
+
+                <div id="Space" class="tabcontent">
+                    <p>ISS Position</p>
+                    <a href="https://www.heavens-above.com/orbitdisplay.aspx?icon=iss&width=600&height=300&mode=M&satid=25544"
+                        target="_blank"><img
+                            src="https://www.heavens-above.com/orbitdisplay.aspx?icon=iss&width=600&height=300&mode=M&satid=25544"></a>
+                    <p></p>
+                    <hr>
+                    <p>Solar - Disc</p>
+                    <a href="https://services.swpc.noaa.gov/images/animations/suvi/primary/map/latest.png"
+                        target="_blank"><img
+                            src="https://services.swpc.noaa.gov/images/animations/suvi/primary/map/latest.png"
+                            height="450px" width="510px"></a>
+                    <p></p>
+                    <hr>
+                    <p>Solar System</p>
                     <a href="https://www.hamqsl.com/solar.html" target="_blank"
                         title="Click to add Solar-Terrestrial Data to your website!"><img
                             src="https://www.hamqsl.com/solarsystem.php"></a>
                 </div>
 
+                <div id="Solar" class="tabcontent">
+                    <p>GOES-16 - 094</p>
+                    <a href="https://services.swpc.noaa.gov/images/animations/suvi/primary/094/latest.png"
+                        target="_blank"><img
+                            src="https://services.swpc.noaa.gov/images/animations/suvi/primary/094/latest.png"
+                            height="400px" width="400px"></a>
+                    <p></p>
+                    <hr>
+                    <p>GOES-16 131</p>
+                    <a href="https://services.swpc.noaa.gov/images/animations/suvi/primary/131/latest.png"
+                        target="_blank"><img
+                            src="https://services.swpc.noaa.gov/images/animations/suvi/primary/131/latest.png"
+                            height="400px" width="400px"></a>
+
+                    <p></p>
+                    <hr>
+                    <p>GOES-16 171</p>
+                    <a href="https://services.swpc.noaa.gov/images/animations/suvi/primary/171/latest.png"
+                        target="_blank"><img
+                            src="https://services.swpc.noaa.gov/images/animations/suvi/primary/171/latest.png"
+                            height="400px" width="400px"></a>
+                    <p></p>
+                    <hr>
+                    <p>GOES-16 175</p>
+                    <a href="https://services.swpc.noaa.gov/images/animations/suvi/primary/195/latest.png"
+                        target="_blank"><img
+                            src="https://services.swpc.noaa.gov/images/animations/suvi/primary/195/latest.png"
+                            height="400px" width="400px"></a>
+                    <p></p>
+                    <hr>
+                    <p>GOES-16 284</p>
+                    <a href="https://services.swpc.noaa.gov/images/animations/suvi/primary/284/latest.png"
+                        target="_blank"><img
+                            src="https://services.swpc.noaa.gov/images/animations/suvi/primary/284/latest.png"
+                            height="400px" width="400px"></a>
+                    <p></p>
+                    <hr>
+                    <p>GOES-16 304</p>
+                    <a href="https://services.swpc.noaa.gov/images/animations/suvi/primary/304/latest.png"
+                        target="_blank"><img
+                            src="https://services.swpc.noaa.gov/images/animations/suvi/primary/304/latest.png"
+                            height="400px" width="400px"></a>
+                </div>
+
+                <script>
+                    function openTab(evt, tabName) {
+                        var i, tabcontent, tablinks;
+                        tabcontent = document.getElementsByClassName("tabcontent");
+                        for (i = 0; i < tabcontent.length; i++) {
+                            tabcontent[i].style.display = "none";
+                        }
+                        tablinks = document.getElementsByClassName("tablinks");
+                        for (i = 0; i < tablinks.length; i++) {
+                            tablinks[i].className = tablinks[i].className.replace(" active", "");
+                        }
+                        document.getElementById(tabName).style.display = "block";
+                        evt.currentTarget.className += " active";
+                    }
+                </script>
             </div>
+
+            <!-- <div>
+                <br>
+                Callsign: <input id="callsign" /><br/>
+                Click <a href="#" id="link">here</a> to launch Dashboard <br/>
+                <script>
+                    var el = document.getElementById('callsign');
+                    var lnk = document.getElementById('link');
+                    el.onchange = el.onkeyup = function()
+                    {lnk.href = "index.html?name=" + el.value + "test";};
+                </script>
+            </div> -->
+
         </div>
         <div id="footer">
-            &#127897;<i>Stay Classy</i> | KE8YUG | <script>document.write( new Date().getFullYear() );</script>
+            &#127897;<i>Stay Classy</i> | KE8YUG |
+            <script>document.write(new Date().getFullYear());</script>
         </div>
     </div>
 </body>
