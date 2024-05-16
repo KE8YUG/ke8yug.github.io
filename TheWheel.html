@@ -14,6 +14,52 @@
   <title>KE8YUG - The Wheel</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
+
+  <script defer type="text/javascript">
+  // const date = new Date();
+
+  // const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  // const currentDayOfWeek = daysOfWeek[date.getDay()];
+  
+  // const currentTime = date.toLocaleTimeString();
+  
+  // alert(`Today is ${currentDayOfWeek} and the time is ${currentTime}`);
+
+  window.onload = function() {
+  switch (new Date().getDay()) {
+  case 0:
+    // day = "Sunday";
+    document.getElementById('detSunday').open = true;
+    break;
+  case 1:
+    // day = "Monday";
+    document.getElementById('detMonday').open = true;
+    break;
+  case 2:
+    //  day = "Tuesday";
+    document.getElementById('detTuesday').open = true;
+    break;
+  case 3:
+    // day = "Wednesday";
+    // const el = document.getElementById('detWednesday');
+    document.getElementById('detWednesday').open = true;
+    break;
+  case 4:
+    // day = "Thursday";
+    document.getElementById('detThursday').open = true;
+    break;
+  case 5:
+    // day = "Friday";
+    document.getElementById('detFriday').open = true;
+    break;
+  case 6:
+    // day = "Saturday";
+    document.getElementById('detSaturday').open = true;
+}
+  }
+
+  </script>
+
 </head>
 
 <body >
@@ -61,7 +107,7 @@
           <span style="color:purple">PURPLE - Digital/Allstar</span><br>
           <span style="color:green">GREEN - Other</span>
           </p>
-          <details>
+          <details id="detMonday">
 <summary><b>Monday -</b></summary>
 <p>
 <ul id="mondayList">
@@ -113,7 +159,7 @@
 </p>
 </details>
 
-<details>
+<details id="detWednesday">
 <summary><b>Wednesday -</b></summary>
 <p>
 <ul id="wednesdayList">
