@@ -30,35 +30,110 @@
   case 0:
     // day = "Sunday";
     document.getElementById('detSunday').open = true;
+    
+    const elsun = document.getElementById('divSunAir');
+    if (elsun.style.display === "none") {
+      elsun.style.display = "block";
+  } else {
+    elsun.style.display = "none";
+  }
     break;
   case 1:
     // day = "Monday";
     document.getElementById('detMonday').open = true;
+
+    const elmon = document.getElementById('divMonAir');
+    if (elmon.style.display === "none") {
+      elmon.style.display = "block";
+  } else {
+    elmon.style.display = "none";
+  }
     break;
   case 2:
     //  day = "Tuesday";
     document.getElementById('detTuesday').open = true;
+
+    const eltue = document.getElementById('divTueAir');
+    if (eltue.style.display === "none") {
+      eltue.style.display = "block";
+  } else {
+    eltue.style.display = "none";
+  }
     break;
   case 3:
     // day = "Wednesday";
-    // const el = document.getElementById('detWednesday');
     document.getElementById('detWednesday').open = true;
+
+    const el = document.getElementById('divWedAir');
+    if (el.style.display === "none") {
+      el.style.display = "block";
+  } else {
+    el.style.display = "none";
+  }
     break;
   case 4:
     // day = "Thursday";
     document.getElementById('detThursday').open = true;
+
+    const elthur = document.getElementById('divThurAir');
+    if (elthur.style.display === "none") {
+      elthur.style.display = "block";
+  } else {
+    elthur.style.display = "none";
+  }
     break;
   case 5:
     // day = "Friday";
     document.getElementById('detFriday').open = true;
+
+    const elfri = document.getElementById('divFriAir');
+    if (elfri.style.display === "none") {
+      elfri.style.display = "block";
+  } else {
+    elfri.style.display = "none";
+  }
     break;
   case 6:
     // day = "Saturday";
     document.getElementById('detSaturday').open = true;
+
+    const elsat = document.getElementById('divSatAir');
+    if (elsat.style.display === "none") {
+      elsat.style.display = "block";
+  } else {
+    elsat.style.display = "none";
+  }
 }
   }
-
   </script>
+
+  <style>
+    body {
+  font-family: sans-serif;
+}
+details {
+  margin: 1em 0;
+}
+summary {
+  list-style: none;
+  display: flex;
+  gap: 0.5em;
+  margin-bottom: 0.5em;
+  align-items: start;
+  cursor: pointer;
+  color: #000000;
+}
+summary::before {
+  content: '▶︎';
+  width: 1em;
+  flex-shrink: 0;
+  transition: 0.3s;
+}
+details[open] > summary::before {
+  transform: rotate(90deg);
+  transform-origin: 40% 45% 0;
+}
+  </style>
 
 </head>
 
@@ -108,7 +183,7 @@
           <span style="color:green">GREEN - Other</span>
           </p>
           <details id="detMonday">
-<summary><b>Monday -</b></summary>
+<summary><b>Monday -</b><div id="divMonAir" style="display: none;"><img src="images/on_air1.gif" width="107px" height="28px" style="position: relative; top: -5px;"/></div></summary>
 <p>
 <ul id="mondayList">
     <li style="color:blue">147.390+ PL 114.8 - Barometer Net - 7AM EST</li>
@@ -135,7 +210,7 @@
 </details>
 
 <details>
-<summary><b>Tuesday -</b></summary>
+<summary><b>Tuesday -</b><div id="divTueAir" style="display: none;"><img src="images/on_air1.gif" width="107px" height="28px" style="position: relative; top: -5px;"/></div></summary>
 <p>
 <ul id="tuesdayList">
     <li style="color:blue">147.390+ PL 114.8 - Barometer Net - 7AM EST</li>
@@ -160,7 +235,7 @@
 </details>
 
 <details id="detWednesday">
-<summary><b>Wednesday -</b></summary>
+<summary><b>Wednesday -</b><div id="divWedAir" style="display: none;"><img src="images/on_air1.gif" width="107px" height="28px" style="position: relative; top: -5px;"/></div></summary>
 <p>
 <ul id="wednesdayList">
     <li style="color:blue">147.390+ PL 114.8 - Barometer Net - 7AM EST</li>
@@ -182,7 +257,7 @@
 </details>
 
 <details>
-<summary><b>Thursday -</b></summary>
+<summary><b>Thursday -</b><div id="divThurAir" style="display: none;"><img src="images/on_air1.gif" width="107px" height="28px" style="position: relative; top: -5px;"/></div></summary>
 <p>
 <ul id="thursdayList">
     <li style="color:blue">147.390+ PL 114.8 - Barometer Net - 7AM EST</li>
@@ -204,7 +279,7 @@
 </details>
 
 <details>
-<summary><b>Friday -</b></summary>
+<summary><b>Friday -</b><div id="divFriAir" style="display: none;"><img src="images/on_air1.gif" width="107px" height="28px" style="position: relative; top: -5px;"/></div></summary>
 <p>
 <ul id="fridayList">
     <li style="color:blue">147.390+ PL 114.8 - Barometer Net - 7AM EST</li>
@@ -225,7 +300,7 @@
 </details>
 
 <details>
-<summary><b>Saturday -</b></summary>
+<summary><b>Saturday -</b><div id="divSatAir" style="display: none;"><img src="images/on_air1.gif" width="107px" height="28px" style="position: relative; top: -5px;"/></div></summary>
 <p>
 <ul id="saturdayList">
     <li style="color:blue">147.390+ PL 114.8 - Barometer Net - 7AM EST</li>
@@ -242,7 +317,7 @@
 </details>
 
 <details>
-<summary><b>Sunday -</b></summary>
+<summary><b>Sunday -</b><div id="divSunAir" style="display: none;"><img src="images/on_air1.gif" width="107px" height="28px" style="position: relative; top: -5px;"/></div></summary>
 <p>
 <ul id="sundayList">
     <li style="color:blue">443.9875+ MHz PL 162.2/162.2 - KA8VDW - Sunday night net - 8PM EST</li>
