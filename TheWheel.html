@@ -141,11 +141,35 @@ details[open] > summary::before {
         color: red;
       }
     }
+
+    /* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  /* position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%; */
+
+  width: 100vw;
+   height: 100vh;
+   object-fit: cover;
+   position: fixed;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   z-index: -1;
+}
   </style>
 
 </head>
 
 <body >
+  <!-- The video -->
+  <video autoplay muted loop id="myVideo">
+    <source src="images/TheWheelVideoBG.mp4" type="video/mp4">
+  </video>
+
   <div id="main">
     <div id="header">
       <div id="logo">
@@ -154,7 +178,7 @@ details[open] > summary::before {
           <h2>Where the Nets Start</h2>
         </div>
         <div style="float: right; padding-top: 25px;">
-          <img src="images/logoRight.png">
+          <img src="images/logoRight.png" width="113px" height="99px">
         </div>
       </div>
       <div id="menubar">
