@@ -106,6 +106,16 @@
   }
 }
   }
+
+  function showAll() {
+    document.getElementById('detSunday').open = true;
+    document.getElementById('detMonday').open = true;
+    document.getElementById('detTuesday').open = true;
+    document.getElementById('detWednesday').open = true;
+    document.getElementById('detThursday').open = true;
+    document.getElementById('detFriday').open = true;
+    document.getElementById('detSaturday').open = true;
+}
   </script>
 
   <style>
@@ -161,6 +171,20 @@ details[open] > summary::before {
    bottom: 0;
    z-index: -1;
 }
+
+.button {
+  border: none;
+  color: white;
+  padding: 7px 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button {background-color: #535353;}
   </style>
 
 </head>
@@ -214,6 +238,7 @@ details[open] > summary::before {
           <span style="color:purple">PURPLE - Digital/Allstar</span><br>
           <span style="color:green">GREEN - HF Nets</span>
           </p>
+          <div style="float: right;"><button class="button" onclick="showAll()">Expand All Days</button></div>
           <details id="detMonday">
 <summary><b>Monday -</b><div id="divMonAir" style="display: none;"><img src="images/on_air1.gif" width="107px" height="28px" style="position: relative; top: -5px;"/></div></summary>
 <p>
