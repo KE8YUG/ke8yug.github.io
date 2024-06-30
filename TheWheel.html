@@ -108,14 +108,29 @@
   }
 
   function showAll() {
-    document.getElementById('detSunday').open = true;
-    document.getElementById('detMonday').open = true;
-    document.getElementById('detTuesday').open = true;
-    document.getElementById('detWednesday').open = true;
-    document.getElementById('detThursday').open = true;
-    document.getElementById('detFriday').open = true;
-    document.getElementById('detSaturday').open = true;
-}
+      if (document.getElementById('showhide').textContent == "Expand All Days") {
+        document.getElementById('showhide').textContent = "Colapse All Days";
+
+        document.getElementById('detSunday').open = true;
+        document.getElementById('detMonday').open = true;
+        document.getElementById('detTuesday').open = true;
+        document.getElementById('detWednesday').open = true;
+        document.getElementById('detThursday').open = true;
+        document.getElementById('detFriday').open = true;
+        document.getElementById('detSaturday').open = true;
+      }
+      else if (document.getElementById('showhide').textContent == "Colapse All Days") {
+      document.getElementById('showhide').textContent = "Expand All Days";
+
+      document.getElementById('detSunday').open = false;
+      document.getElementById('detMonday').open = false;
+      document.getElementById('detTuesday').open = false;
+      document.getElementById('detWednesday').open = false;
+      document.getElementById('detThursday').open = false;
+      document.getElementById('detFriday').open = false;
+      document.getElementById('detSaturday').open = false;
+    }
+    }
   </script>
 
   <style>
@@ -238,7 +253,7 @@ details[open] > summary::before {
           <span style="color:purple">PURPLE - Digital/Allstar</span><br>
           <span style="color:green">GREEN - HF Nets</span>
           </p>
-          <div style="float: right;"><button class="button" onclick="showAll()">Expand All Days</button></div>
+          <div style="float: right;"><button id="showhide" class="button" onclick="showAll()">Expand All Days</button></div>
           <details id="detMonday">
 <summary><b>Monday -</b><div id="divMonAir" style="display: none;"><img src="images/on_air1.gif" width="107px" height="28px" style="position: relative; top: -5px;"/></div></summary>
 <p>
