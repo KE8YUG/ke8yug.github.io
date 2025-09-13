@@ -49,6 +49,44 @@
             font-size: 17px;
         }
 
+        /* Mobile responsive styles for Conditions page */
+        @media screen and (max-width: 768px) {
+            .tab button {
+                padding: 10px 8px;
+                font-size: 14px;
+                width: 20%;
+            }
+            
+            .tabcontent {
+                padding: 10px;
+            }
+            
+            .tabcontent img {
+                max-width: 100%;
+                height: auto;
+            }
+            
+            #conditionTabs {
+                padding: 10px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .tab button {
+                padding: 8px 4px;
+                font-size: 12px;
+                width: 20%;
+            }
+            
+            .tabcontent {
+                padding: 5px;
+            }
+            
+            .clock {
+                font-size: 100%;
+            }
+        }
+
         /* Change background color of buttons on hover */
         .tab button:hover {
             background-color: #ddd;
